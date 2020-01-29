@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: tektondashboard-ingress
+  namespace: tekton-pipelines
+  annotations:
+    kubernetes.io/ingress.class: traefik
+spec:
+  rules:
+  - host: <YOUR_HOSTNAME_HERE>
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: tekton-dashboard 
+          servicePort: 9097
