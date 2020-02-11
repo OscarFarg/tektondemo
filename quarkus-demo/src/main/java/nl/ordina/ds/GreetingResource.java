@@ -1,4 +1,4 @@
-cd package nl.ordina.ds;
+package nl.ordina.ds;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

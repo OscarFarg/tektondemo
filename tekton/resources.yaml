@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: tektondemo-git
+spec:
+  type: git
+  params:
+  - name: url
+    value: https://github.com/OscarFarg/tektondemo.git
+  - name: revision
+    value: master  
+    # Check https://github.com/tektoncd/pipeline/blob/master/docs/resources.md#pipelineresources for more applicable parameters
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: tektondemo-image
+spec:
+  type: image
+  params:
+  - name: url
+    value: index.docker.io/oscarfarg/tektondemo
+    # Check https://github.com/tektoncd/pipeline/blob/master/docs/resources.md#pipelineresources for more applicable parameters
